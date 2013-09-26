@@ -32,6 +32,7 @@ char* palindrome(char* str) {
     }
     ++i;
   }
+  free(rev);
   
   if (result) {
     answer = calloc(4, sizeof(char));
