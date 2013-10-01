@@ -23,6 +23,7 @@ void mergeRanges(int* values, int startIndex, int midPoint, int endIndex) {
       destination[copyIndex] = values[secondIndex];
       secondIndex++;
     }
+    copyIndex++;
   }
   while(firstIndex < midPoint) {
     destination[copyIndex] = values[firstIndex];
@@ -48,18 +49,9 @@ void mergesortRange(int* values, int startIndex, int endIndex) {
     mergesortRange(values, startIndex, midPoint);
     mergesortRange(values, midPoint, endIndex);
     mergeRanges(values, startIndex, midPoint, endIndex);
-    int i;
-    //for (i=0; i<rangeSize; ++i) {
-      //printf("values[%d] = %d.\n", i);
-    //}
   }
 }
 
 void mergesort(int size, int* values) {
-  //int* temp = calloc(size, sizeof(int));
-  //for (i=0; i<size; ++i) {
-  //  temp[i] = values[i];
-  //  printf("temp[%d] = %d.\n", temp[i]);
-  //}
   mergesortRange(values, 0, size);
 }
